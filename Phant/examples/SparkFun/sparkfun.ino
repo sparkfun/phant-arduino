@@ -2,7 +2,8 @@
 
 // Arduino example stream
 // http://data.sparkfun.com/streams/VGb2Y1jD4VIxjX3x196z
-Phant phant("http://data.sparkfun.com", "VGb2Y1jD4VIxjX3x196z", "9YBaDk6yeMtNErDNq4YM");
+// host, public key, private key
+Phant phant("http://data.sparkfun.com/", "VGb2Y1jD4VIxjX3x196z", "9YBaDk6yeMtNErDNq4YM");
 
 void setup() {
   Serial.begin(9600);
