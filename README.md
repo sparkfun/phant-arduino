@@ -40,3 +40,9 @@ void loop() {
 }
 
 ```
+
+This example prints the following URL to the serial monitor:
+
+```
+http://data.sparkfun.com/input/VGb2Y1jD4VIxjX3x196z?private_key=9YBaDk6yeMtNErDNq4YM&val1=testing&val2=12&val3=101
+```
