@@ -34,6 +34,42 @@ void Phant::add(String field, String data) {
 
 }
 
+void Phant::add(String field, char data) {
+
+  _params += "&" + field + "=" + String(data);
+
+}
+
+void Phant::add(String field, int data) {
+
+  _params += "&" + field + "=" + String(data);
+
+}
+
+void Phant::add(String field, byte data) {
+
+  _params += "&" + field + "=" + String(data);
+
+}
+
+void Phant::add(String field, long data) {
+
+  _params += "&" + field + "=" + String(data);
+
+}
+
+void Phant::add(String field, unsigned int data) {
+
+  _params += "&" + field + "=" + String(data);
+
+}
+
+void Phant::add(String field, unsigned long data) {
+
+  _params += "&" + field + "=" + String(data);
+
+}
+
 String Phant::url() {
 
   String result = _host + "input/" + _pub + "?private_key=" + _prv + _params;

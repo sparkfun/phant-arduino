@@ -11,9 +11,9 @@ void setup() {
 
 void loop() {
 
-  phant.add("val1", "does");
-  phant.add("val2", "this");
-  phant.add("val3", "work");
+  phant.add("val1", "help");
+  phant.add("val2", 22);
+  phant.add("val3", 0x65);
 
   Serial.println(phant.url());
 

@@ -28,6 +28,12 @@ class Phant {
   public:
     Phant(String host, String publicKey, String privateKey);
     void add(String field, String data);
+    void add(String field, char data);
+    void add(String field, int data);
+    void add(String field, byte data);
+    void add(String field, long data);
+    void add(String field, unsigned int data);
+    void add(String field, unsigned long data);
     String url();
 
   private:
