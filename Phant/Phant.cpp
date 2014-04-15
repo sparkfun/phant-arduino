@@ -25,4 +25,21 @@ Phant::Phant(String host, String publicKey, String privateKey) {
   _host = host;
   _pub = publicKey;
   _prv = privateKey;
+  _params = "";
+}
+
+void Phant::add(String field, String data) {
+
+  _params += "&" + field + "=" + data;
+
+}
+
+String Phant::url() {
+
+  String result = _host + "input/" + _pub + "?private_key=" + _prv + _params;
+
+  _params = "";
+
+  return result;
+
 }
