@@ -78,8 +78,6 @@ void Phant::add(String field, double data) {
 
   _params += "&" + field + "=" + String(tmp);
 
-  tmp[0] = 0;
-
 }
 
 void Phant::add(String field, float data) {
@@ -89,8 +87,6 @@ void Phant::add(String field, float data) {
   dtostrf(data, 1, 4, tmp);
 
   _params += "&" + field + "=" + String(tmp);
-
-  tmp[0] = 0;
 
 }
 
