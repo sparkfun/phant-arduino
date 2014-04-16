@@ -92,7 +92,21 @@ void Phant::add(String field, float data) {
 
 String Phant::url() {
 
-  String result = _host + "input/" + _pub + "?private_key=" + _prv + _params;
+  String result = "http://" + _host + "/input/" + _pub;
+  result += "?private_key=" + _prv + _params;
+
+  _params = "";
+
+  return result;
+
+}
+
+String Phant::get() {
+
+  String result = "GET /input/" + _pub;
+  result += "?private_key=" + _prv + _params + " HTTP/1.1\n";
+  result += "Host: " + _host + "\n";
+  result += "Connection: close\n";
 
   _params = "";
 

@@ -37,6 +37,7 @@ class Phant {
     void add(String field, float data);
     void add(String field, double data);
     String url();
+    String get();
 
   private:
     String _pub;

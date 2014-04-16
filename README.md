@@ -25,7 +25,7 @@ $ ln -s ~/phant-arduino/Phant/ ~/Documents/Arduino/libraries/Phant
 
 // Arduino example stream
 // host, public key, private key
-Phant phant("http://data.sparkfun.com/", "VGb2Y1jD4VIxjX3x196z", "9YBaDk6yeMtNErDNq4YM");
+Phant phant("data.sparkfun.com", "VGb2Y1jD4VIxjX3x196z", "9YBaDk6yeMtNErDNq4YM");
 
 void setup() {
   Serial.begin(9600);
