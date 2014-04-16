@@ -1,7 +1,7 @@
 # phant-arduino
 
 The goal of this library is to provide a simple interface for logging data to phant.
-It will eventually take any data type, convert it to a `String`, and build a url. This
+It should take any data type, convert it to a `String`, and build a url. This
 library will not handle interaction with WiFi or ethernet shields, it's only purpose is
 to make it easier for users to build phant compatible requests without worrying about data
 types and string concatenation.
@@ -18,6 +18,8 @@ $ ln -s ~/phant-arduino/Phant/ ~/Documents/Arduino/libraries/Phant
 **Windows:** :cry:
 
 ## Example
+
+### Sketch
 
 ```ino
 #include <Phant.h>
@@ -65,20 +67,21 @@ void loop() {
 }
 ```
 
+### Output
+
 This example prints the following to the serial monitor:
 
 ```
 ----URL-----
-http://data.sparkfun.com/input/VGb2Y1jD4VIxjX3x196z?private_key=9YBaDk6yeMtNErDNq4YM&val1=url&val2=22&val3=0.1234
+http://data.sparkfun.com/input/VGb2Y1jD4VIxjX3x196z.txt?private_key=9YBaDk6yeMtNErDNq4YM&val1=url&val2=22&val3=0.1234
 
 ----HTTP GET----
-GET /input/VGb2Y1jD4VIxjX3x196z?private_key=9YBaDk6yeMtNErDNq4YM&val1=get&val2=1&val3=101 HTTP/1.1
+GET /input/VGb2Y1jD4VIxjX3x196z.txt?private_key=9YBaDk6yeMtNErDNq4YM&val1=get&val2=1&val3=101 HTTP/1.1
 Host: data.sparkfun.com
 Connection: close
 
-
 ----HTTP POST----
-POST /input/VGb2Y1jD4VIxjX3x196z HTTP/1.1
+POST /input/VGb2Y1jD4VIxjX3x196z.txt HTTP/1.1
 Host: data.sparkfun.com
 Connection: close
 Content-Type: application/x-www-form-urlencoded
