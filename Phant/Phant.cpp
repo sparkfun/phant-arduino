@@ -92,7 +92,7 @@ void Phant::add(String field, float data) {
 
 String Phant::url() {
 
-  String result = "http://" + _host + "/input/" + _pub;
+  String result = "http://" + _host + "/input/" + _pub + ".txt";
   result += "?private_key=" + _prv + _params;
 
   _params = "";
@@ -103,7 +103,7 @@ String Phant::url() {
 
 String Phant::get() {
 
-  String result = "GET /input/" + _pub;
+  String result = "GET /input/" + _pub + ".txt";
   result += "?private_key=" + _prv + _params + " HTTP/1.1\n";
   result += "Host: " + _host + "\n";
   result += "Connection: close\n";
@@ -118,7 +118,7 @@ String Phant::post() {
 
   String params = _params.substring(1);
 
-  String result = "POST /input/" + _pub + " HTTP/1.1\n";
+  String result = "POST /input/" + _pub + ".txt HTTP/1.1\n";
   result += "Host: " + _host + "\n";
   result += "Connection: close\n";
   result += "Content-Type: application/x-www-form-urlencoded\n";
