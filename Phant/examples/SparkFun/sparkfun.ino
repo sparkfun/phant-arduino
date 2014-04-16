@@ -27,8 +27,6 @@ void loop() {
   Serial.println("----HTTP GET----");
   Serial.println(phant.get());
 
-  Serial.println();
-
   phant.add("val1", "post");
   phant.add("val2", false);
   phant.add("val3", 98.6);

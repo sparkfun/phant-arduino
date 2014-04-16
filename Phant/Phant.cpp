@@ -103,12 +103,9 @@ String Phant::url() {
 
 String Phant::get() {
 
-  String result = "GET /input/" + _pub + ".txt";
-  result += "?private_key=" + _prv + _params + " HTTP/1.1\n";
+  String result = "GET /output/" + _pub + ".csv HTTP/1.1\n";
   result += "Host: " + _host + "\n";
   result += "Connection: close\n";
-
-  _params = "";
 
   return result;
 
