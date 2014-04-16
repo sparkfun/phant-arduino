@@ -67,7 +67,7 @@ void loop() {
 
 This example prints the following to the serial monitor:
 
-```txt
+```
 ----URL-----
 http://data.sparkfun.com/input/VGb2Y1jD4VIxjX3x196z?private_key=9YBaDk6yeMtNErDNq4YM&val1=url&val2=22&val3=0.1234
 
