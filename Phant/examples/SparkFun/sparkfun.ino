@@ -11,13 +11,32 @@ void setup() {
 
 void loop() {
 
-  phant.add("val1", "help");
+  phant.add("val1", "url");
   phant.add("val2", 22);
   phant.add("val3", 0.1234);
 
+  Serial.println("----URL-----");
   Serial.println(phant.url());
 
+  Serial.println();
+
+  phant.add("val1", "get");
+  phant.add("val2", true);
+  phant.add("val3", 0x65);
+
+  Serial.println("----HTTP GET----");
   Serial.println(phant.get());
+
+  Serial.println();
+
+  phant.add("val1", "post");
+  phant.add("val2", false);
+  phant.add("val3", 98.6);
+
+  Serial.println("----HTTP POST----");
+  Serial.println(phant.post());
+
+  Serial.println();
 
   delay(2000);
 
