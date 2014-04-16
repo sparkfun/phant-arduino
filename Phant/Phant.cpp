@@ -113,3 +113,20 @@ String Phant::get() {
   return result;
 
 }
+
+String Phant::post() {
+
+  String params = _params.substring(1);
+
+  String result = "POST /input/" + _pub + " HTTP/1.1\n";
+  result += "Host: " + _host + "\n";
+  result += "Connection: close\n";
+  result += "Content-Type: application/x-www-form-urlencoded\n";
+  result += "Content-Length: " + String(params.length()) + "\n\n";
+  result += params;
+
+  _params = "";
+
+  return result;
+
+}

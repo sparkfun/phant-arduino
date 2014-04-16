@@ -38,6 +38,7 @@ class Phant {
     void add(String field, double data);
     String url();
     String get();
+    String post();
 
   private:
     String _pub;
