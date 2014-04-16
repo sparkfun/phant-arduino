@@ -13,7 +13,7 @@ void loop() {
 
   phant.add("val1", "help");
   phant.add("val2", 22);
-  phant.add("val3", 0x65);
+  phant.add("val3", 0.1234);
 
   Serial.println(phant.url());
 

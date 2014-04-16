@@ -34,6 +34,8 @@ class Phant {
     void add(String field, long data);
     void add(String field, unsigned int data);
     void add(String field, unsigned long data);
+    void add(String field, float data);
+    void add(String field, double data);
     String url();
 
   private:

@@ -70,6 +70,30 @@ void Phant::add(String field, unsigned long data) {
 
 }
 
+void Phant::add(String field, double data) {
+
+  char tmp[30];
+
+  dtostrf(data, 1, 4, tmp);
+
+  _params += "&" + field + "=" + String(tmp);
+
+  tmp[0] = 0;
+
+}
+
+void Phant::add(String field, float data) {
+
+  char tmp[30];
+
+  dtostrf(data, 1, 4, tmp);
+
+  _params += "&" + field + "=" + String(tmp);
+
+  tmp[0] = 0;
+
+}
+
 String Phant::url() {
 
   String result = _host + "input/" + _pub + "?private_key=" + _prv + _params;
