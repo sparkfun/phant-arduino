@@ -82,13 +82,6 @@ void loop() {
 
   Serial.println();
 
-  phant.add("val1", "get");
-  phant.add("val2", true);
-  phant.add("val3", 0x65);
-
-  Serial.println("----HTTP GET----");
-  Serial.println(phant.get());
-
   phant.add("val1", "post");
   phant.add("val2", false);
   phant.add("val3", 98.6);
@@ -97,6 +90,9 @@ void loop() {
   Serial.println(phant.post());
 
   Serial.println();
+
+  Serial.println("----HTTP GET----");
+  Serial.println(phant.get());
 
   delay(2000);
 
@@ -111,11 +107,6 @@ This example prints the following to the serial monitor:
 ----TEST URL-----
 http://data.sparkfun.com/input/VGb2Y1jD4VIxjX3x196z.txt?private_key=9YBaDk6yeMtNErDNq4YM&val1=url&val2=22&val3=0.1234
 
-----HTTP GET----
-GET /output/VGb2Y1jD4VIxjX3x196z.csv HTTP/1.1
-Host: data.sparkfun.com
-Connection: close
-
 ----HTTP POST----
 POST /input/VGb2Y1jD4VIxjX3x196z.txt HTTP/1.1
 Host: data.sparkfun.com
@@ -124,4 +115,9 @@ Content-Type: application/x-www-form-urlencoded
 Content-Length: 29
 
 val1=post&val2=0&val3=98.6000
+
+----HTTP GET----
+GET /output/VGb2Y1jD4VIxjX3x196z.csv HTTP/1.1
+Host: data.sparkfun.com
+Connection: close
 ```

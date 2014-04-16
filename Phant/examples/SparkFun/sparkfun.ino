@@ -15,17 +15,10 @@ void loop() {
   phant.add("val2", 22);
   phant.add("val3", 0.1234);
 
-  Serial.println("----URL-----");
+  Serial.println("----TEST URL-----");
   Serial.println(phant.url());
 
   Serial.println();
-
-  phant.add("val1", "get");
-  phant.add("val2", true);
-  phant.add("val3", 0x65);
-
-  Serial.println("----HTTP GET----");
-  Serial.println(phant.get());
 
   phant.add("val1", "post");
   phant.add("val2", false);
@@ -35,6 +28,9 @@ void loop() {
   Serial.println(phant.post());
 
   Serial.println();
+
+  Serial.println("----HTTP GET----");
+  Serial.println(phant.get());
 
   delay(2000);
 
