@@ -117,6 +117,7 @@ String Phant::post() {
 
   String result = "POST /input/" + _pub + ".txt HTTP/1.1\n";
   result += "Host: " + _host + "\n";
+  result += "Phant-Private-Key: " + _prv + "\n";
   result += "Connection: close\n";
   result += "Content-Type: application/x-www-form-urlencoded\n";
   result += "Content-Length: " + String(params.length()) + "\n\n";
