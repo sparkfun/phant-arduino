@@ -39,6 +39,7 @@ class Phant {
     String url();
     String get();
     String post();
+    String clear();
 
   private:
     String _pub;

@@ -37,8 +37,9 @@ phant.add("raining", false);
 ```
 
 To get the request string for adding data, you have two options `phant.url()` and `phant.post()`.
-Both methods will clear the current request data after building and returning the current request. Unless 
-there is some compelling reason to do otherwise, you should always use `phant.post()` to get a [HTTP POST](http://en.wikipedia.org/wiki/POST_(HTTP)) request string. `phant.url()` will return a URL that you
+Both methods will clear the current request data after building and returning the current request. Unless
+there is some compelling reason to do otherwise, you should always use `phant.post()` to get a
+[HTTP POST](http://en.wikipedia.org/wiki/POST_(HTTP)) request string. `phant.url()` will return a URL that you
 can use in your web browser to test data logging.
 
 In this example `client` would be an instance of whatever ethernet library you are using:
@@ -47,9 +48,16 @@ In this example `client` would be an instance of whatever ethernet library you a
 client.println(phant.post());
 ```
 
-If you would like to retrieve your logged data, `phant.get()` will return a [HTTP GET](http://en.wikipedia.org/wiki/GET_(HTTP)) request string that will cause the server to respond with
-your logged data in [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) format. Parsing CSV is outside
-of the scope of this library.
+To clear all of the data in your stream, you can use `phant.clear()` to get a `HTTP DELETE` request string. Clearing the
+data will not delete the stream definition, it will only delete the logged data.
+
+```
+client.println(phant.clear());
+```
+
+If you would like to retrieve your logged data, `phant.get()` will return a [HTTP GET](http://en.wikipedia.org/wiki/GET_(HTTP))
+request string that will cause the server to respond with your logged data in [CSV](http://en.wikipedia.org/wiki/Comma-separated_values)
+format. Parsing CSV is outside of the scope of this library.
 
 ```
 client.println(phant.get());
@@ -94,6 +102,9 @@ void loop() {
   Serial.println("----HTTP GET----");
   Serial.println(phant.get());
 
+  Serial.println("----HTTP DELETE----");
+  Serial.println(phant.clear());
+
   delay(2000);
 
 }
@@ -119,5 +130,11 @@ val1=post&val2=0&val3=98.6000
 ----HTTP GET----
 GET /output/VGb2Y1jD4VIxjX3x196z.csv HTTP/1.1
 Host: data.sparkfun.com
+Connection: close
+
+----HTTP DELETE----
+DELETE /input/VGb2Y1jD4VIxjX3x196z/clear.txt HTTP/1.1
+Host: data.sparkfun.com
+Phant-Private-Key: 9YBaDk6yeMtNErDNq4YM
 Connection: close
 ```

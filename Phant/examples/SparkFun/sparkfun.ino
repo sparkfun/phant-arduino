@@ -32,6 +32,9 @@ void loop() {
   Serial.println("----HTTP GET----");
   Serial.println(phant.get());
 
+  Serial.println("----HTTP DELETE----");
+  Serial.println(phant.clear());
+
   delay(2000);
 
 }
