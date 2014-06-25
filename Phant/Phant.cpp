@@ -131,7 +131,7 @@ String Phant::post() {
 
 String Phant::clear() {
 
-  String result = "DELETE /input/" + _pub + "/clear.txt HTTP/1.1\n";
+  String result = "DELETE /input/" + _pub + ".txt HTTP/1.1\n";
   result += "Host: " + _host + "\n";
   result += "Phant-Private-Key: " + _prv + "\n";
   result += "Connection: close\n";
