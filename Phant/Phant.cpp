@@ -90,6 +90,10 @@ void Phant::add(String field, float data) {
 
 }
 
+String Phant::queryString() {
+  return _params;
+}
+
 String Phant::url() {
 
   String result = "http://" + _host + "/input/" + _pub + ".txt";

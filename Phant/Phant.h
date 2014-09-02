@@ -36,6 +36,7 @@ class Phant {
     void add(String field, unsigned long data);
     void add(String field, float data);
     void add(String field, double data);
+    String queryString();
     String url();
     String get();
     String post();
