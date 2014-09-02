@@ -91,7 +91,7 @@ void Phant::add(String field, float data) {
 }
 
 String Phant::queryString() {
-  return _params;
+  return String(_params);
 }
 
 String Phant::url() {
@@ -129,7 +129,7 @@ String Phant::post() {
 
   _params = "";
 
-  return result;
+  return String(result);
 
 }
 
