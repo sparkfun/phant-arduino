@@ -129,7 +129,7 @@ String Phant::post() {
 
   _params = "";
 
-  return String(result);
+  return result;
 
 }
 
