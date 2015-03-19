@@ -36,6 +36,17 @@ class Phant {
     void add(String field, unsigned long data);
     void add(String field, float data);
     void add(String field, double data);
+
+    void add(const __FlashStringHelper * field, String data);
+    void add(const __FlashStringHelper * field, char data);
+    void add(const __FlashStringHelper * field, int data);
+    void add(const __FlashStringHelper * field, byte data);
+    void add(const __FlashStringHelper * field, long data);
+    void add(const __FlashStringHelper * field, unsigned int data);
+    void add(const __FlashStringHelper * field, unsigned long data);
+    void add(const __FlashStringHelper * field, float data);
+    void add(const __FlashStringHelper * field, double data);
+
     String queryString();
     String url();
     String get();
@@ -48,6 +59,7 @@ class Phant {
     String _host;
     String _params;
 
+	void addFlashString(const __FlashStringHelper *string, String & dest);
 };
 
 #endif
