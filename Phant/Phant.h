@@ -59,7 +59,7 @@ class Phant {
     String _host;
     String _params;
 
-	void addFlashString(const __FlashStringHelper *string, String & dest);
+    void addFlashString(const __FlashStringHelper *string, String & dest);
 };
 
 #endif
