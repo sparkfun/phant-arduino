@@ -20,7 +20,12 @@
 
 #include "Arduino.h"
 #include "Phant.h"
+
+#ifdef ARDUINO_ARCH_AVR
 #include <avr/pgmspace.h>
+#else
+#include "pgmspace.h"
+#endif
 
 static const char HEADER_POST_URL1[] PROGMEM = "POST /input/";
 static const char HEADER_POST_URL2[] PROGMEM = ".txt HTTP/1.1\n";
