@@ -28,7 +28,7 @@
 #endif
 
 static const char HEADER_POST_URL1[] PROGMEM = "POST /input/";
-static const char HEADER_POST_URL2[] PROGMEM = ".txt HTTP/1.1\n";
+static const char HEADER_POST_URL2[] PROGMEM = ".txt\nHTTP/1.1\n";
 static const char HEADER_PHANT_PRV_KEY[] PROGMEM = "Phant-Private-Key: ";
 static const char HEADER_CONNECTION_CLOSE[] PROGMEM = "Connection: close\n";
 static const char HEADER_CONTENT_TYPE[] PROGMEM = "Content-Type: application/x-www-form-urlencoded\n";
@@ -206,7 +206,7 @@ String Phant::url() {
 
 String Phant::get() {
 
-  String result = "GET /output/" + _pub + ".csv HTTP/1.1\n";
+  String result = "GET /output/" + _pub + ".csv\nHTTP/1.1\n";
   result += "Host: " + _host + "\n";
   result += "Connection: close\n";
 
@@ -218,7 +218,7 @@ String Phant::post() {
 
   String params = _params.substring(1);
   String result;
-  //String result = "POST /input/" + _pub + ".txt HTTP/1.1\n";
+  //String result = "POST /input/" + _pub + ".txt\nHTTP/1.1\n";
   for (int i=0; i<strlen(HEADER_POST_URL1); i++)
   {
     result += (char)pgm_read_byte_near(HEADER_POST_URL1 + i);
@@ -260,7 +260,7 @@ String Phant::post() {
 
 String Phant::clear() {
 
-  String result = "DELETE /input/" + _pub + ".txt HTTP/1.1\n";
+  String result = "DELETE /input/" + _pub + ".txt\nHTTP/1.1\n";
   result += "Host: " + _host + "\n";
   result += "Phant-Private-Key: " + _prv + "\n";
   result += "Connection: close\n";
